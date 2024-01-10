@@ -9,7 +9,7 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+var addButton=document.querySelector(".top-section__block-button");//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -39,7 +39,7 @@ var createNewTaskElement=function(taskString){
     checkBox.type="checkbox";
     checkBox.className="tasks-list__checkbox";
     editInput.type="text";
-    editInput.className="task tasks-list__label";
+    editInput.className="task tasks-list__input";
     listItem.className = "tasks-list__item";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
@@ -88,7 +88,7 @@ var editTask=function(){
     var editInput=listItem.querySelector(".tasks-list__input");
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".tasks-list__button-edit");
-    var containsClass=listItem.classList.contains(".tasks-list__item-edit");
+    var containsClass=listItem.classList.contains("tasks-list__item-edit");
     //If class of the parent is .tasks-list__item-edit
     if(containsClass){
 
